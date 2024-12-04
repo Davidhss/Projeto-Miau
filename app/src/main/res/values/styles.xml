@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CircularButtonShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- 50% para garantir um círculo perfeito -->
+        <color name="blue">#145EB3F</color>
+
+    </style>
+</resources>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7"
+    tools:context=".MarketActivity">
+
+    <!-- Título "Mercado" -->
+    <TextView
+        android:id="@+id/title_mercado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Mercado"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Container para os ícones -->
+    <LinearLayout
+        android:id="@+id/icon_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Ícone de notificação -->
+        <ImageView
+            android:id="@+id/icon_notification"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Ícone de Notificação"
+            android:src="@drawable/notificacao" />
+
+        <!-- Ícone de sacola -->
+        <ImageView
+            android:id="@+id/icon_bag"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Ícone de Sacola"
+            android:src="@drawable/sacola" />
+    </LinearLayout>
+
+    <!-- Barra de Pesquisa -->
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Pesquisar..."
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingVertical="8dp"
+        android:textSize="16sp"
+        android:inputType="text"
+        android:elevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/title_mercado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Subtítulo "Produtos Recomendados" -->
+    <TextView
+        android:id="@+id/subtitle_recommended_products"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Produtos Recomendados"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#666"
+        app:layout_constraintTop_toBottomOf="@id/search_bar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Container dos Cards -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/subtitle_recommended_products"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <!-- Card de Produto 1 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/product_card_1"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="16dp"
+            app:cardCornerRadius="8dp"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toStartOf="@id/product_card_2"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:gravity="center_horizontal">
+
+                <!-- Imagem do Produto -->
+                <ImageView
+                    android:id="@+id/product_image"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/sacolaMercado"
+                    android:contentDescription="Imagem do Produto" />
+
+                <!-- Descrição do Produto -->
+                <TextView
+                    android:id="@+id/product_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Ração Special Dog Premium para Cães Adultos"
+                    android:textSize="14sp"
+                    android:textColor="#7D7D7D"
+                    android:gravity="center" />
+
+                <!-- Preço e Botão -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical|space_between">
+
+                    <!-- Preço -->
+                    <TextView
+                        android:id="@+id/product_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="R$ 149,00"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#333" />
+
+                    <!-- Botão de Adicionar -->
+                    <Button
+                        android:id="@+id/add_button"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center"
+                        android:text="+"
+                        android:textSize="24sp"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="@color/blue"
+                        android:shapeAppearanceOverlay="@style/CircularButtonShape" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card de Produto 2 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/product_card_2"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="16dp"
+            app:cardCornerRadius="8dp"
+            android:elevation="4dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:gravity="center_horizontal">
+
+                <!-- Imagem do Produto -->
+                <ImageView
+                    android:id="@+id/product_image2"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/gata"
+                    android:contentDescription="Imagem do Produto" />
+
+                <!-- Descrição do Produto -->
+                <TextView
+                    android:id="@+id/product_description2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Ração Special Dog Premium para Cães Adultos"
+                    android:textSize="14sp"
+                    android:textColor="#7D7D7D"
+                    android:gravity="center" />
+
+                <!-- Preço e Botão -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical|space_between">
+
+                    <!-- Preço -->
+                    <TextView
+                        android:id="@+id/product_price2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="R$ 149,00"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#333" />
+
+                    <!-- Botão de Adicionar -->
+                    <Button
+                        android:id="@+id/add2_button"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center"
+                        android:text="+"
+                        android:textSize="24sp"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="@color/blue"
+                        android:shapeAppearanceOverlay="@style/CircularButtonShape" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

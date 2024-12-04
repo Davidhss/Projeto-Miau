@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- res/drawable/background_gradient.xml -->
+    <!-- res/drawable/card_background.xml -->
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <solid android:color="#D3D3D3"/> <!-- Cinza claro -->
+        <corners android:radius="8dp"/> <!-- Bordas arredondadas opcional -->
+    </shape>
+
+
+
+</selector>

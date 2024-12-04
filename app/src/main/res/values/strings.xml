@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MI&amp;AU</string>
+    <string name="cadastrar">Cadastrar</string>
+
+        <!-- String para o botão com o símbolo "+" -->
+        <string name="button_add">+</string>
+
+
+</resources>
